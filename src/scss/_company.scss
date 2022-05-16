@@ -1,0 +1,326 @@
+$catColors: (
+    all: #F0F0F0,
+    health: #ebe3d3,
+    retail: #edd4d4,
+    manufacturing: #dbe3ce,
+    financial: #d5e1ec,
+    utility: #d6d6e6,
+    other: #b7b78a
+);
+
+.company {
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 75px;
+
+    .desktopContainer {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 100%;
+    }
+
+    .rankContainer {
+        max-width: 80px;
+        width: 100%;
+
+        .rank {
+            font-size: 55px;
+            font-family: "Whitman Display Compressed Bold", serif;
+            font-weight: bold;
+            padding: 40px 0 34px 0;
+            background: #DEDEDE;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+    } 
+
+    .quickHit {
+        font-family: "Benton Sans", sans-serif;
+        font-size: 13px;
+        display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        // margin-top: 3px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        max-width: 725px;
+        width: 100%;
+
+        .spacer {
+            display: inline-block;
+            padding: 0 1em;
+            color: #bdbdbd;
+
+            &:after {
+                content: '|';
+            }
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .website {
+            a {
+                color: #2E73B8 !important;
+            
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        @each $cat, $color in $catColors {
+            .category.#{$cat} {
+                display: inline-block;
+                // border: 1px solid #a0a0a0; /*was 006341 */
+                padding: 6px 7px 6px 7px;
+                line-height: 1;
+                // margin-right: 5px;
+                // margin-bottom: 5px;
+                border-radius: 5px;
+                font-size: 13px;
+                // position: relative;
+                // width: auto;
+                color: black;
+                background-color: $color;
+            }
+          }
+    }
+
+    .quickHitMobile {
+        font-family: "Benton Sans", sans-serif;
+        font-size: 13px;
+        display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        // margin-top: 3px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        max-width: 700px;
+        width: 100%;
+        display: none;
+
+        .spacer {
+            display: inline-block;
+            padding: 0 1em;
+            color: #bdbdbd;
+
+            &:after {
+                content: '|';
+            }
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        @each $cat, $color in $catColors {
+            .category.#{$cat} {
+                display: inline-block;
+                // border: 1px solid #a0a0a0; /*was 006341 */
+                padding: 6px 7px 6px 7px;
+                line-height: 1;
+                // margin-right: 5px;
+                // margin-bottom: 5px;
+                border-radius: 5px;
+                font-size: 13px;
+                // position: relative;
+                // width: auto;
+                color: black;
+                background-color: $color;
+            }
+          }
+    }
+
+    .infoContainer {
+        margin-left: 25px;
+        width: 100%;
+
+        .desc {
+            font-family: "Benton Sans", sans-serif;
+            margin-top: 4px;
+        }
+
+        h3 {
+            font-family: "Benton Sans", sans-serif;
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+
+        .financials {
+            font-family: "Benton Sans", sans-serif;
+            display: flex;
+            flex-direction: row;
+            max-width: 750px;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+
+            .infoBlock {
+                display: flex;
+                flex-direction: column;
+
+                .infoCapt {
+                    font-size: 13px;
+                }
+            }
+
+            .bold {
+                font-weight: bold;
+
+                &.cash {
+                    font-size: 16px;
+                }
+            }
+
+            .negative {
+                font-weight: bold;
+                // color: #A20000;
+                color: 	#686868;
+            }
+
+            .positive {
+                font-weight: bold;
+                // color: #008E04;
+                color: 	#686868;
+            }
+
+            .zero {
+                font-weight: bold;
+                color: 	#686868;
+            }
+            
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .company {
+        flex-direction: column;
+
+        .rankContainer {
+            max-width: 85px;
+            width: 100%;
+            // padding-bottom: 100%;
+    
+            .rank {
+                font-size: 40px;
+                font-family: "Whitman Display Compressed Bold", serif;
+                font-weight: bold;
+                padding: 30px 0 25px 0;
+                background: #D0D0D0;
+                width: 100%;
+                text-align: center;
+                border-radius: 5px;
+                color: #ffffff;
+            }
+        } 
+
+        .quickHit {
+            // display: none;
+            display: flex;
+            justify-content: flex-start;
+
+            .blockInfo {
+                margin-bottom: 8px;
+            }
+
+            .spacer {
+                margin-bottom: 8px;
+            }
+        }
+
+        .quickHitMobile {
+            // display: block;
+            flex-direction: row;
+            justify-content: flex-start;
+
+            .blockInfo {
+                display: inline-block;
+                margin-bottom: 4px;
+            }
+
+            .spacer {
+                margin-bottom: 4px;
+            }
+        }
+
+        .infoContainer {
+            margin-left: 15px;
+
+            .financials {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 10px;
+
+                .infoBlock {
+                    margin-top: 15px;
+                }
+            }
+
+        } 
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .company {
+        .rankContainer {
+            max-width: 60px;
+            width: 100%;
+            // padding-bottom: 100%;
+    
+            .rank {
+                font-size: 36px;
+                font-family: "Whitman Display Compressed Bold", serif;
+                font-weight: bold;
+                padding: 15px 0 10px 0;
+                background: #D0D0D0;
+                width: 100%;
+                text-align: center;
+                border-radius: 5px;
+                color: #ffffff;
+            }
+        }
+
+        .quickHitMobile {
+            display: block;
+            .spacer {
+                display: inline-block;
+                padding: 0 0.35em;
+                color: #bdbdbd;
+
+                &:after {
+                    content: '|';
+                }
+            }
+        }     
+        
+        .infoContainer {
+
+            .quickHit {
+                display: none; 
+
+                .spacer {
+                    display: inline-block;
+                    padding: 0 0.35em;
+                    color: #bdbdbd;
+    
+                    &:after {
+                        content: '|';
+                    }
+                }
+            }           
+        }
+    }
+}

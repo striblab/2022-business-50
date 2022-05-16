@@ -1,0 +1,131 @@
+
+$catColors: (
+    all: #F0F0F0,
+    health: #ebe3d3,
+    retail: #edd4d4,
+    manufacturing: #dbe3ce,
+    financial: #d5e1ec,
+    utility: #d6d6e6,
+    other: #b7b78a
+  );
+
+.categorySelector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 970px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    // text-align: center;
+    border-bottom: 3px solid #707070;
+    font-family: "Benton Sans", sans-serif;
+
+    .buttons {
+      display: flex; 
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  
+    h3 {
+      font-size: 15px !important;
+    //   text-align: center;
+      margin-top: 0;
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 8px;
+    }
+
+    div.feature {
+      /*width: 130px;*/
+      font-family: "Benton Sans", sans-serif;
+      text-align: center;
+      display: inline-block;
+      position: relative;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 10px !important;
+      background: none;
+  
+      input {
+          display: inline;
+          opacity: 0;
+          position: absolute;
+          z-index: 10000;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          min-height: 25px;
+          margin-bottom: 0;
+  
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        input:checked + label {
+          // font-weight: bold;
+          border: 1.5px solid black;
+          // color: #006341;
+        }
+        input:not(:checked) + label{
+          /* Explicit Unchecked Styles */
+          opacity: 0.65;// Only apply border to unchecked state
+        }
+        input:selected + label.type {
+          font-weight: bold;
+          border: 1.5px solid black;
+        }
+        label.type {
+          display: inline-block;
+          border: 1px solid #a0a0a0; /*was 006341 */
+          padding: 5px 10px 5px 10px;
+          line-height: 1;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          border-radius: 8px;
+          font-size: 13px;
+          position: relative;
+          width: auto;
+          color: black; /*was 006341 */
+      }
+      @each $cat, $color in $catColors {
+        label.features.#{$cat} {
+            /*display: inline-block; */
+            // border: 1px solid #a0a0a0; /*was 006341 */
+            padding: 5px 10px 5px 10px;
+            line-height: 1;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            font-size: 13px;
+            position: relative;
+            width: auto;
+            color: black;
+            background-color: $color;
+        }
+      }
+      label.features, label.type {
+        @media (min-width: 701px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 715px) {
+      .categorySelector {
+          flex-direction: column;
+
+          h3 {
+            margin-right: 0;
+            margin-bottom: 8px;
+          }
+
+          .buttons {
+            justify-content: center;
+          }
+      }
+  }
