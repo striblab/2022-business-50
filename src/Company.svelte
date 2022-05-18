@@ -41,6 +41,8 @@
 
                 if (financials_year[metricType] < 0 && financials_year[prev_year] < 0) {
                     return 'N/A'
+                } else if (financials_year[prev_year] < 0) {
+                    return 'N/A'
                 }
                 else {
                     if (percent_change > 0) {
