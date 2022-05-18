@@ -76,7 +76,7 @@
 
             <h3>{company.name}</h3>
             <div class="desc">
-                {company.description}
+                {company.shortdesc}
             </div>
 
             <div class="financials">
