@@ -54,7 +54,6 @@ To preserve the previous year's version, you can start a new branch off master o
 Install the dependencies...
 
 ```bash
-cd svelte-app
 npm install
 ```
 
