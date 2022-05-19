@@ -147,6 +147,13 @@ $catColors: (
         .desc {
             font-family: "Benton Sans", sans-serif;
             margin-top: 4px;
+
+            .company-footnotes {
+                font-size: 0.65em;
+                font-color: #676767;
+                margin-bottom: 1.25em;
+                margin-top:1em;
+            }
         }
 
         h3 {
