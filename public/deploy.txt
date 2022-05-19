@@ -1,1 +1,1 @@
-[production] st50
+[production] strib50
