@@ -79,7 +79,11 @@
             <h3>{company.name}</h3>
             <div class="desc">
                 {company.shortdesc}
+                <div class="company-footnotes">
+                    {financials_year.footnotes}
+                </div>
             </div>
+
 
             <div class="financials">
                 <div class="revenue infoBlock">
