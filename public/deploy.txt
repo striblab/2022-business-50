@@ -1,1 +1,1 @@
-[production] footnotes
+[production] style fix
